@@ -14,8 +14,8 @@ app = Flask(__name__)
 
 load_dotenv()
 
-PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
-OPENAI_API_KEY=os.environ.get('OPENAI_API_KEY')
+PINECONE_API_STR=os.environ.get('PINECONE_API_STR')
+OPENAI_API_STR=os.environ.get('OPENAI_API_STR')
 
 embeddings = download_hugging_face_embeddings()
 

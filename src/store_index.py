@@ -7,14 +7,14 @@ import os
 
 load_dotenv()
 
-PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
+PINECONE_API_STR = os.environ.get("PINECONE_API_STR")
+os.environ["PINECONE_API_STR"] = PINECONE_API_STR
 
 extracted_data = load_pdf_file(data = "data/")
 text_chunks = text_split(extracted_data)
 embeddings = download_hugging_face_embeddings()
 
-pc = Pinecone(api_key=PINECONE_API_KEY)
+pc = Pinecone(api_key=PINECONE_API_STR)
 
 index_name = 'medichatbot-latest'
 
